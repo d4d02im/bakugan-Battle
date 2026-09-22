@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b12">
+<meta name="description" content="Единый регламент классического Bakugan 1–4 сезонов. Правила для игры в Bakugan Generation 1.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Bakugan Rules">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Bakugan Rules — Generation 1</title>
+<style>
+:root{
+  --bg:#070911;--surface:#0e1220;--surface2:#151a2a;--line:#262d42;--text:#f4f6ff;--muted:#9aa4bd;
+  --accent:#8d5cff;--accent2:#25c6ff;--gold:#f7c85b;--danger:#ff6377;--ok:#54d69a;
+  --shadow:0 18px 50px rgba(0,0,0,.35);--radius:18px;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at 80% 0%,rgba(141,92,255,.12),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}button,input{font:inherit}
+.app{min-height:100vh;display:grid;grid-template-columns:280px 1fr}
+.sidebar{position:sticky;top:0;height:100vh;padding:20px 16px;border-right:1px solid var(--line);background:rgba(7,9,17,.86);backdrop-filter:blur(18px);overflow:auto}
+.brand{display:flex;align-items:center;gap:12px;padding:8px 10px 18px}.brand-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#5a35de);box-shadow:0 0 28px rgba(141,92,255,.35);font-weight:900}.brand h1{font-size:15px;line-height:1.15;margin:0}.brand small{display:block;color:var(--muted);font-weight:500;margin-top:3px}
+.search{position:relative;margin:2px 8px 16px}.search input{width:100%;padding:11px 12px 11px 36px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);outline:none}.search svg{position:absolute;left:11px;top:12px;opacity:.55}
+.nav-group{margin:12px 6px}.nav-title{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#65708c;padding:0 8px 7px}.nav a{display:block;padding:8px 10px;border-radius:10px;color:#aeb7cd;font-size:13px;margin:2px 0;transition:.18s}.nav a:hover,.nav a.active{background:rgba(141,92,255,.13);color:#fff}.nav a.active{box-shadow:inset 2px 0 0 var(--accent)}
+main{max-width:1000px;width:100%;margin:0 auto;padding:26px 28px 110px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.crumb{font-size:13px;color:var(--muted)}.tools{display:flex;gap:8px}.tool{border:1px solid var(--line);background:var(--surface);color:#dfe4f4;border-radius:11px;padding:9px 11px;cursor:pointer}.tool:hover{border-color:#3b4561}
+.hero{padding:28px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(141,92,255,.12),rgba(37,198,255,.05) 50%,rgba(255,255,255,.02));box-shadow:var(--shadow);border-radius:24px;margin-bottom:22px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;right:-70px;top:-80px;width:240px;height:240px;border-radius:50%;border:28px solid rgba(141,92,255,.08);box-shadow:0 0 0 20px rgba(37,198,255,.035),0 0 80px rgba(141,92,255,.12)}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:#b9abff;font-weight:800}.hero h2{font-size:clamp(28px,5vw,48px);line-height:1.02;margin:8px 0 12px;max-width:720px}.hero p{max-width:720px;color:#b7c0d6;margin:0}.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.badge{padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--line);font-size:12px;color:#d7dded}
+.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}.quick a{padding:14px;background:var(--surface);border:1px solid var(--line);border-radius:14px}.quick strong{display:block;font-size:13px}.quick span{font-size:11px;color:var(--muted)}
+section{scroll-margin-top:18px;margin:28px 0}.section-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.16)}.section-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:12px}.num{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:rgba(141,92,255,.15);color:#c7baff;font-weight:900;font-size:12px;flex:none}.section-head h3{margin:0;font-size:20px;line-height:1.25}.section-head p{margin:4px 0 0;color:var(--muted);font-size:13px}.section-body{padding:20px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.mini{padding:14px;border:1px solid var(--line);background:rgba(255,255,255,.015);border-radius:14px}.mini h4{margin:0 0 5px;font-size:14px}.mini p{margin:0;color:#b9c2d7;font-size:13px}.rule{padding:12px 14px;border-left:3px solid var(--accent);background:rgba(141,92,255,.07);border-radius:0 12px 12px 0;margin:12px 0}.warn{border-left-color:var(--gold);background:rgba(247,200,91,.07)}.ok{border-left-color:var(--ok);background:rgba(84,214,154,.06)}.danger{border-left-color:var(--danger);background:rgba(255,99,119,.06)}
+.steps{counter-reset:step;display:grid;gap:10px}.step{display:grid;grid-template-columns:36px 1fr;gap:10px;align-items:start}.step:before{counter-increment:step;content:counter(step);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(37,198,255,.1);border:1px solid rgba(37,198,255,.24);color:#8de6ff;font-size:12px;font-weight:900}.step strong{display:block}.muted{color:var(--muted)}.formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;padding:14px;background:#080b13;border:1px dashed #323b55;border-radius:12px;overflow:auto;color:#e1e7f8}
+table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}th{color:#cdd4e8;font-weight:700;background:rgba(255,255,255,.02)}td{color:#adb7cc}.attr{font-weight:800}.pyrus{color:#ff825f}.aquos{color:#6fc8ff}.ventus{color:#86ea94}.haos{color:#ffe783}.darkus{color:#bda1ff}.subterra{color:#d4a06f}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.season{padding:15px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}.season .s{font-size:11px;color:#818ca5;text-transform:uppercase}.season h4{margin:4px 0;font-size:14px}.season p{margin:0;color:#aab4ca;font-size:12px}
+footer{padding:26px 4px;color:#68738f;font-size:12px;text-align:center}.mobile-nav{display:none}.backtop{position:fixed;right:18px;bottom:18px;border:1px solid var(--line);background:rgba(14,18,32,.92);color:#fff;border-radius:999px;padding:10px 12px;cursor:pointer;box-shadow:var(--shadow)}
+.no-results{display:none;padding:30px;text-align:center;color:var(--muted)}
+@media (max-width:900px){.app{grid-template-columns:1fr}.sidebar{display:none}main{padding:18px 15px 96px}.mobile-nav{position:fixed;z-index:50;display:grid;grid-template-columns:repeat(4,1fr);left:10px;right:10px;bottom:10px;padding:7px;border:1px solid var(--line);background:rgba(10,13,23,.92);backdrop-filter:blur(18px);border-radius:18px;box-shadow:var(--shadow)}.mobile-nav a{font-size:10px;color:#9aa4bd;text-align:center;padding:6px 2px;border-radius:12px}.mobile-nav a.active{background:rgba(141,92,255,.14);color:#fff}.quick{grid-template-columns:repeat(2,1fr)}.grid3{grid-template-columns:1fr}.timeline{grid-template-columns:repeat(2,1fr)}.hero{padding:22px}}
+@media (max-width:580px){.topbar{align-items:flex-start}.tools{display:none}.grid2{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.section-body{padding:16px}.section-head{padding:16px}.hero h2{font-size:32px}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{scroll-behavior:auto!important;transition:none!important}}
+@media print{.sidebar,.mobile-nav,.tools,.backtop{display:none!important}.app{display:block}main{max-width:none;padding:0}.section-card,.hero{box-shadow:none}body{background:white;color:black}.muted,td,.section-head p,.hero p{color:#444}.section-card{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="brand-mark">B</div><div><h1>Bakugan Rules</h1><small>Generation 1 • 2007–2011</small></div></div>
+  <div class="search"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="m21 19.6-5.1-5.1a7 7 0 1 0-1.4 1.4l5.1 5.1zM5 10.5A5.5 5.5 0 1 1 10.5 16 5.5 5.5 0 0 1 5 10.5"/></svg><input id="search" placeholder="Поиск по правилам…" autocomplete="off"></div>
+  <div class="nav" id="nav">
+    <div class="nav-group"><div class="nav-title">Старт</div><a href="#overview">Обзор</a><a href="#setup">Подготовка</a><a href="#turn">Ход игрока</a><a href="#battle">Battle</a></div>
+    <div class="nav-group"><div class="nav-title">Карты</div><a href="#gate">Gate Cards</a><a href="#ability">Ability Cards</a></div>
+    <div class="nav-group"><div class="nav-title">Доп. механики</div><a href="#trap">Trap</a><a href="#gear">Battle Gear</a><a href="#evolution">Special Evolution</a><a href="#mechtogan">Mechtogan</a><a href="#nano">BakuNano</a><a href="#support">Support Pieces</a></div>
+    <div class="nav-group"><div class="nav-title">Форматы</div><a href="#special">Особые Bakugan</a><a href="#biggame">Big Game</a><a href="#multiplayer">3–4 игрока</a><a href="#rulings">Спорные моменты</a></div>
+  </div>
+</aside>
+<main>
+  <div class="topbar"><div class="crumb">🎴 Уютный уголок <span class="muted">/</span> Настольный Bakugan</div><div class="tools"><button class="tool" id="installBtn" hidden>Установить</button><button class="tool" id="printBtn">Печать</button></div></div>
+  <header class="hero" id="overview">
+    <div class="eyebrow">Классическая игровая система</div>
+    <h2>BAKUGAN<br>Generation 1</h2>
+    <p>Единый регламент для оригинальных Bakugan 1–4 сезонов: Battle Brawlers, New Vestroia, Gundalian Invaders и Mechtanium Surge.</p>
+    <div class="badges"><span class="badge">3 Gate Cards — победа</span><span class="badge">1 Support Piece / Battle</span><span class="badge">до 3 BakuNano</span><span class="badge">Сезоны 1–4 вместе</span></div>
+  </header>
+  <div class="quick">
+    <a href="#battle"><strong>⚔ Как проходит Battle</strong><span>Последовательность боя</span></a>
+    <a href="#setup"><strong>🎴 Что нужно игроку</strong><span>3×3 + поддержка</span></a>
+    <a href="#biggame"><strong>🔥 Big Game</strong><span>Расширенный формат</span></a>
+    <a href="#rulings"><strong>⚠ Споры</strong><span>Различия правил</span></a>
+  </div>
+
+  <section id="setup"><div class="section-card"><div class="section-head"><div class="num">01</div><div><h3>Подготовка и состав игры</h3><p>Стандартный матч для 2 игроков</p></div></div><div class="section-body">
+    <div class="grid3">
+      <div class="mini"><h4>3 Bakugan</h4><p>Ваш основной отряд. Разрешены смешанные сезоны.</p></div>
+      <div class="mini"><h4>3 Gate Cards</h4><p>Gold, Silver и Copper/Bronze — по одной.</p></div>
+      <div class="mini"><h4>3 Ability Cards</h4><p>Красная, синяя и зелёная — по одной.</p></div>
+      <div class="mini"><h4>до 2 Support Pieces</h4><p>Trap, Gear, Mechtogan, Mobile Assault и др.</p></div>
+      <div class="mini"><h4>до 3 BakuNano</h4><p>Отдельный лимит, не считается Support Piece.</p></div>
+      <div class="mini"><h4>Победа: 3 Gate</h4><p>Первым получить 3 Gate Cards в свой Used Pile.</p></div>
+    </div>
+    <div class="rule ok"><strong>Главное:</strong> карты и элементы разных сезонов 1–4 можно смешивать. Базой считается поздняя классическая система с победой через Gate Cards, а не ранняя HSP-версия.</div>
+  </div></div></section>
+
+  <section id="turn"><div class="section-card"><div class="section-head"><div class="num">02</div><div><h3>Ход игрока</h3><p>От броска до Battle</p></div></div><div class="section-body"><div class="steps">
+    <div class="step"><div><strong>Выберите Bakugan</strong><span class="muted">Берите закрытый Bakugan из Unused Pile.</span></div></div>
+    <div class="step"><div><strong>Бросьте его</strong><span class="muted">Объявьте «Bakugan Brawl!» и бросьте в сторону Gate Cards.</span></div></div>
+    <div class="step"><div><strong>Промах</strong><span class="muted">Не попал на Gate Card → Bakugan в Used Pile, ход закончен.</span></div></div>
+    <div class="step"><div><strong>Успешный Stand</strong><span class="muted">Остановился на Gate Card → карта остаётся под ним, ход переходит дальше.</span></div></div>
+    <div class="step"><div><strong>Второй игрок попал на ту же карту</strong><span class="muted">Если на ней стоит Bakugan соперника → начинается Battle.</span></div></div>
+  </div></div></div></section>
+
+  <section id="battle"><div class="section-card"><div class="section-head"><div class="num">03</div><div><h3>Battle — полный порядок действий</h3><p>Используйте эту последовательность за столом</p></div></div><div class="section-body"><div class="steps">
+    <div class="step"><div><strong>Gate Reveal</strong><span class="muted">Переверните Gate Card и прочитайте её текст.</span></div></div>
+    <div class="step"><div><strong>Определите Attributes</strong><span class="muted">У каждого Bakugan должен быть один текущий Attribute: Pyrus, Aquos, Ventus, Haos, Darkus или Subterra.</span></div></div>
+    <div class="step"><div><strong>Ability Cards</strong><span class="muted">Разыгрываются только карты, условия которых выполнены. В спорных случаях момент применения определяет текст карты.</span></div></div>
+    <div class="step"><div><strong>Support Piece</strong><span class="muted">Можно использовать не более одного Support Piece за Battle.</span></div></div>
+    <div class="step"><div><strong>BakuNano</strong><span class="muted">Подходящие Nano можно применять по их условиям; они имеют отдельный лимит.</span></div></div>
+    <div class="step"><div><strong>Gate Bonus</strong><span class="muted">Прибавьте значение Gate Card напротив текущего Attribute каждого Bakugan.</span></div></div>
+    <div class="step"><div><strong>Сравните итог</strong><span class="muted">Высший итоговый G-Power выигрывает Battle и получает Gate Card.</span></div></div>
+  </div><div class="formula">Final G = Printed G +/− effects + Support Piece + BakuNano + Gate Bonus + прочие разрешённые эффекты</div><div class="rule warn"><strong>Ничья:</strong> при равном результате выигрывает Bakugan, который первым встал на Gate Card.</div><div class="rule"><strong>Абсолютный приоритет:</strong> текст конкретной карты / Reference Card важнее базового правила, если они прямо меняют его.</div></div></div></section>
+
+  <section id="gate"><div class="section-card"><div class="section-head"><div class="num">04</div><div><h3>Gate Cards</h3><p>Основа каждого Battle</p></div></div><div class="section-body"><div class="grid2"><div class="mini"><h4>Gold / Silver / Copper</h4><p>В обычном наборе — по одной карте каждого цвета.</p></div><div class="mini"><h4>6 Attributes</h4><p>Pyrus, Aquos, Ventus, Haos, Darkus, Subterra.</p></div></div><div class="rule"><strong>Бонус карты:</strong> используйте число напротив текущего Attribute. Если сама Gate Card устанавливает особое правило, оно имеет приоритет.</div></div></div></section>
+
+  <section id="ability"><div class="section-card"><div class="section-head"><div class="num">05</div><div><h3>Ability Cards</h3><p>Красные, синие и зелёные карты</p></div></div><div class="section-body"><div class="grid3"><div class="mini"><h4>🔴 Red</h4><p>Часто связаны с броском и условиями до Battle.</p></div><div class="mini"><h4>🔵 Blue</h4><p>Часто применяются непосредственно в Battle.</p></div><div class="mini"><h4>🟢 Green</h4><p>Момент применения определяется текстом конкретной карты.</p></div></div><div class="rule ok"><strong>Не судите по цвету:</strong> решающим всегда является текст карты и её условие.</div></div></div></section>
+
+  <section id="trap"><div class="section-card"><div class="section-head"><div class="num">06</div><div><h3>Bakugan Trap</h3><p>Классическая механика New Vestroia</p></div></div><div class="section-body"><p>Trap применяется во время Battle как Support Piece. В зависимости от конкретной модели он может изменить Attribute или дать дополнительный эффект.</p><div class="rule"><strong>Лимит:</strong> один Support Piece за Battle.</div></div></div></section>
+
+  <section id="gear"><div class="section-card"><div class="section-head"><div class="num">07</div><div><h3>Battle Gear & Mobile Assault</h3><p>Главное расширение Gundalian Invaders</p></div></div><div class="section-body"><div class="grid2"><div class="mini"><h4>Battle Gear</h4><p>Активируется во время Battle; его G-Power добавляется к Bakugan. Reference Card может дать дополнительную способность.</p></div><div class="mini"><h4>Mobile Assault</h4><p>Совместимый Bakugan устанавливается на машину и бросается как единая конструкция; дальнейшие условия задаёт Reference Card.</p></div></div><div class="rule warn"><strong>Совместимость:</strong> если старый Bakugan не имеет физического крепления Gear, конкретные поздние правила допускают использование Gear как отдельного игрового элемента, когда это разрешено его системой.</div></div></div></section>
+
+  <section id="evolution"><div class="section-card"><div class="section-head"><div class="num">08</div><div><h3>Special Evolution</h3><p>Эволюции Gundalian Invaders</p></div></div><div class="section-body"><div class="steps"><div class="step"><div><strong>Проверьте Power Level</strong><span class="muted">Он должен достигать значения на Reference Card.</span></div></div><div class="step"><div><strong>Нужен исходный Bakugan</strong><span class="muted">Соответствующий базовый Bakugan должен быть доступен по условиям Evolution.</span></div></div><div class="step"><div><strong>Пропустите ход</strong><span class="muted">После выполнения условий игрок пропускает свой ход и выполняет Evolution.</span></div></div></div><div class="formula">Power Level = количество Gate Cards в Used Pile всех игроков</div></div></div></section>
+
+  <section id="mechtogan"><div class="section-card"><div class="section-head"><div class="num">09</div><div><h3>Mechtogan</h3><p>Mechtanium Surge</p></div></div><div class="section-body"><p>Mechtogan используется как Support Piece во время Battle. Его G-Power добавляется к силе вашего Bakugan согласно правилам конкретной модели.</p><div class="grid2"><div class="mini"><h4>Mechtogan Titan</h4><p>Работает по тому же общему принципу, но является более крупным игровым элементом.</p></div><div class="mini"><h4>Лимит</h4><p>В обычном Battle всё равно можно использовать только один Support Piece.</p></div></div></div></div></section>
+
+  <section id="nano"><div class="section-card"><div class="section-head"><div class="num">10</div><div><h3>BakuNano</h3><p>Позднее усиление из Mechtanium Surge</p></div></div><div class="section-body"><p>BakuNano имеет отдельные условия совместимости, связанные с его Gate Attribute. Он может усиливать Bakugan или Mechtogan в зависимости от конкретного элемента.</p><div class="rule ok"><strong>Лимит:</strong> до 3 BakuNano в обычной игре. Nano не считается Support Piece, поэтому его наличие не уменьшает лимит Support Pieces.</div></div></div></section>
+
+  <section id="support"><div class="section-card"><div class="section-head"><div class="num">11</div><div><h3>Support Pieces</h3><p>Как не запутаться в лимитах</p></div></div><div class="section-body"><table><thead><tr><th>Правило</th><th>Обычная игра</th><th>Big Game</th></tr></thead><tbody><tr><td>Support Pieces в Force</td><td>до 2</td><td>до 4</td></tr><tr><td>Support Pieces за один Battle</td><td>1</td><td>1</td></tr><tr><td>BakuNano</td><td>до 3</td><td>до 6*</td></tr></tbody></table><div class="rule warn"><strong>* Спорный момент:</strong> Mechtanium Surge Rulebook указывает до 6 BakuNano в Big Game, а сохранённый Gameplay FAQ содержит противоречивое упоминание меньшего лимита. Для группы рекомендуется заранее зафиксировать вариант «до 6», если вы хотите следовать основному MS Rulebook.</div></div></div></section>
+
+  <section id="special"><div class="section-card"><div class="section-head"><div class="num">12</div><div><h3>Особые Bakugan</h3><p>Только общие принципы — карта/модель имеет приоритет</p></div></div><div class="section-body"><div class="grid3"><div class="mini"><h4>Clear / BakuCrystal</h4><p>Могут принимать Attribute соперника по своим правилам.</p></div><div class="mini"><h4>Translucent / Neon / Solar / Lyte</h4><p>Могут выбирать собственный или Attribute соперника, когда это предусмотрено системой.</p></div><div class="mini"><h4>Dual Attribute</h4><p>Выбирается один Attribute; два Gate Bonus одновременно не складываются.</p></div><div class="mini"><h4>Pearl / BakuPearl / BakuFrost</h4><p>Используют обычный или выделенный бонус — согласно конкретным правилам.</p></div><div class="mini"><h4>BakuMutant</h4><p>Комбинация частей может менять Attribute и правила определения силы.</p></div><div class="mini"><h4>BakuDouble Strike</h4><p>Дополнительная трансформация/бонус по специальным условиям модели.</p></div></div></div></div></section>
+
+  <section id="biggame"><div class="section-card"><div class="section-head"><div class="num">13</div><div><h3>Big Game</h3><p>Расширенный формат для большой компании</p></div></div><div class="section-body"><div class="timeline"><div class="season"><div class="s">Bakugan</div><h4>6</h4><p>Вместо обычных трёх.</p></div><div class="season"><div class="s">Gate</div><h4>6</h4><p>По две Gold, Silver, Copper.</p></div><div class="season"><div class="s">Ability</div><h4>6</h4><p>По две красные, синие, зелёные.</p></div><div class="season"><div class="s">Support</div><h4>до 4</h4><p>Лимит Force.</p></div></div><div class="rule ok"><strong>Победа:</strong> первым получить 6 Gate Cards. На поле одновременно находятся две Gate Cards.</div><div class="rule"><strong>Для втроём:</strong> этот формат тоже можно использовать, если хочется более длинной партии.</div></div></div></section>
+
+  <section id="multiplayer"><div class="section-card"><div class="section-head"><div class="num">14</div><div><h3>Игра втроём и вчетвером</h3><p>Для компании «я + девушка + ещё кто-нибудь»</p></div></div><div class="section-body"><div class="grid2"><div class="mini"><h4>👥 3 игрока</h4><p>Gate Cards можно расположить треугольником. Ходы идут по очереди. Battle возникает, когда Bakugan разных игроков оказываются на одной Gate Card.</p></div><div class="mini"><h4>👥 4 игрока</h4><p>Поле можно разложить квадратом. При желании можно играть 2×2 командами, заранее согласовав победный лимит Gate Cards.</p></div></div><div class="rule warn"><strong>Практический совет:</strong> для первой игры втроём используйте обычный формат 3×3. Так партия остаётся понятной и не перегружается поздними механиками.</div></div></div></section>
+
+  <section id="rulings"><div class="section-card"><div class="section-head"><div class="num">15</div><div><h3>Спорные места и единая версия для группы</h3><p>Что считать правилом по умолчанию</p></div></div><div class="section-body"><table><thead><tr><th>Вопрос</th><th>Историческая разница</th><th>В группе</th></tr></thead><tbody>
+    <tr><td>HSP</td><td>Очень ранняя Arena Play система.</td><td>Не используем.</td></tr>
+    <tr><td>Ничья</td><td>В раннем rulebook — повторный бросок.</td><td>Побеждает первый вставший Bakugan.</td></tr>
+    <tr><td>Support Pieces</td><td>Правила расширялись по сезонам.</td><td>До 2 в Force, только 1 за Battle.</td></tr>
+    <tr><td>Power Level</td><td>Появился в Gundalian Invaders.</td><td>Используем при необходимости карт/эволюций, которые его требуют.</td></tr>
+    <tr><td>Big Game Nano</td><td>Есть противоречие между основным MS Rulebook и FAQ.</td><td>До 6 по основному Rulebook — если группа не договорилась иначе.</td></tr>
+  </tbody></table><div class="rule danger"><strong>Правило спора:</strong> сначала текст конкретной карты / Reference Card, затем специальные правила конкретного элемента, и только потом этот общий регламент.</div></div></div></section>
+
+  <section id="quickstart"><div class="section-card"><div class="section-head"><div class="num">16</div><div><h3>Шпаргалка перед первой партией</h3><p>Можно открыть прямо во время игры</p></div></div><div class="section-body"><div class="grid2"><div class="mini"><h4>Нужно каждому</h4><p>3 Bakugan · 3 Gate · 3 Ability · до 2 Support · до 3 Nano.</p></div><div class="mini"><h4>Победа</h4><p>Первым забрать 3 Gate Cards.</p></div><div class="mini"><h4>Battle</h4><p>Reveal Gate → Ability → 1 Support → Nano → Gate Bonus → сравнить G.</p></div><div class="mini"><h4>Главное</h4><p>Текст карты важнее общего правила.</p></div></div></div></div></section>
+
+  <footer>Bakugan Rules • Generation 1 • 2007–2011 • Внутренний регламент для игрового раздела «Уютного уголка»</footer>
+  <div class="no-results" id="noResults">Ничего не найдено. Попробуйте другое слово.</div>
+</main>
+</div>
+<nav class="mobile-nav"><a href="#overview">⌂<br>Главная</a><a href="#battle">⚔<br>Battle</a><a href="#support">◈<br>Дополнения</a><a href="#biggame">♟<br>Форматы</a></nav>
+<button class="backtop" id="backtop" aria-label="Наверх">↑</button>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+(function(){
+  const tg=window.Telegram?.WebApp;
+  if(!tg) return;
+  try{
+    tg.ready();
+    tg.expand();
+    tg.setHeaderColor('#090b12');
+    tg.setBackgroundColor('#070911');
+    document.documentElement.style.setProperty('--tg-bottom-safe',(tg.safeAreaInset?.bottom||0)+'px');
+    tg.onEvent?.('themeChanged',()=>{
+      const p=tg.themeParams||{};
+      if(p.bg_color) document.documentElement.style.setProperty('--bg',p.bg_color);
+      if(p.secondary_bg_color) document.documentElement.style.setProperty('--surface',p.secondary_bg_color);
+      if(p.text_color) document.documentElement.style.setProperty('--text',p.text_color);
+      if(p.hint_color) document.documentElement.style.setProperty('--muted',p.hint_color);
+    });
+    document.body.classList.add('telegram-app');
+  }catch(e){}
+})();
+</script>
+<script>
+const navLinks=[...document.querySelectorAll('.nav a,.mobile-nav a')];
+const sections=[...document.querySelectorAll('main section, #overview')];
+function setActive(){let y=scrollY+100;let current=sections[0]?.id;for(const s of sections){if(s.offsetTop<=y)current=s.id}navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+current))}
+addEventListener('scroll',setActive,{passive:true});setActive();
+const search=document.getElementById('search');const cards=[...document.querySelectorAll('main section')];const noResults=document.getElementById('noResults');
+search?.addEventListener('input',()=>{const q=search.value.trim().toLowerCase();let hits=0;cards.forEach(s=>{const ok=!q||s.innerText.toLowerCase().includes(q);s.style.display=ok?'':'none';if(ok)hits++});noResults.style.display=hits?'none':'block'});
+document.getElementById('printBtn')?.addEventListener('click',()=>print());
+document.getElementById('backtop')?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+let deferred;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;const b=document.getElementById('installBtn');b.hidden=false;b.onclick=async()=>{b.hidden=true;deferred.prompt();await deferred.userChoice;deferred=null}});
+if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+</script>
+</body>
+</html>
